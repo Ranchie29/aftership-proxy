@@ -8,7 +8,15 @@ const API_KEY = 'asat_97ba028e0bbb444f82fb5c6f1ff7984a';
 const ALLOWED_ORIGIN = 'https://www.gawangliliw.com';
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  const origin = req.headers.origin;
+  const allowedOrigins = [
+    'https://gawangliliw.com',
+    'https://www.gawangliliw.com',
+    'http://localhost:5500'  // Keep for local dev
+  ];
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, as-api-key');
   if (req.method === 'OPTIONS') {
