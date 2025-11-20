@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const API_KEY = 'asat_97ba028e0bbb444f82fb5c6f1ff7984a';
+const API_KEY = 'asat_93599ec434cd4760aeae8825230e2645';
 const ALLOWED_ORIGIN = 'https://www.gawangliliw.com';
 
 app.use((req, res, next) => {
@@ -98,3 +98,4 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`[${new Date().toISOString()}] Proxy server running at http://localhost:${PORT}`);
 });
+
